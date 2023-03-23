@@ -1,9 +1,11 @@
 from pathlib import Path
 import random
 import string
+from time import time
 
 
 def generate_experiment_id() -> str:
+    random.seed(time())
     return ''.join(random.sample(string.ascii_lowercase + string.digits, 8))
 
 
